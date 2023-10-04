@@ -1,4 +1,4 @@
-function textSplit(el) {
+function textsplitter(el) {
     el.each(function() {
         var el = $(this)
         var string = el.html() 
@@ -44,12 +44,12 @@ function textSplit(el) {
 
 try {
     Weglot.on("languageChanged", function() {
-        textSplit($("[cb-textreveal-element=text]"))
+        textsplitter($("[cb-textreveal-element=text]"))
     })
     Weglot.on("initialized", function() {
         if (Weglot.getCurrentLang() !== Weglot.options.language_from) {return}
-        textSplit($("[cb-textreveal-element=text]"))
+        textsplitter($("[cb-textreveal-element=text]"))
     })
 } catch(e) {
-   textSplit($("[cb-textreveal-element=text]"))
+   textsplitter($("[cb-textreveal-element=text]"))
 }
